@@ -1,0 +1,391 @@
+from pymongo import MongoClient
+
+client = MongoClient('mongodb://test:test@3.35.251.121', 27017)
+# client = MongoClient("localhost", 27017)
+db = client.dbproject
+
+data = [
+    {
+        "menu": "세숫대야 김치전골",
+        "price": 17000,
+        "img": ".jpg",
+        "tab": 1,
+    },
+    {
+        "menu": "꽃게해물탕",
+        "price": 20000,
+        "img": ".jpg",
+        "tab": 1,
+    },
+    {
+        "menu": "나가사끼짬뽕",
+        "price": 19000,
+        "img": ".jpg",
+        "tab": 1,
+    },
+    {
+        "menu": "백합조개탕",
+        "price": 14000,
+        "img": ".jpg",
+        "tab": 1,
+    },
+    {
+        "menu": "닭볶음탕",
+        "price": 19000,
+        "img": ".jpg",
+        "tab": 1,
+    },
+    {
+        "menu": "곱창전골",
+        "price": 17000,
+        "img": ".jpg",
+        "tab": 1,
+    },
+    {
+        "menu": "치즈라볶이",
+        "price": 9000,
+        "img": ".jpg",
+        "tab": 1,
+    },
+    {
+        "menu": "코코포차 오뎅탕",
+        "price": 12000,
+        "img": ".jpg",
+        "tab": 1,
+    },
+    {
+        "menu": "기똥찬 곱삼전골",
+        "price": 19000,
+        "img": ".jpg",
+        "tab": 1,
+    },
+    {
+        "menu": "진짜 갈비찜",
+        "price": 19000,
+        "img": ".jpg",
+        "tab": 1,
+    },
+    {
+        "menu": "불오뎅",
+        "price": 12000,
+        "img": ".jpg",
+        "tab": 1,
+    },
+    {
+        "menu": "김해 뒷고기 한판",
+        "price": 19000,
+        "img": ".jpg",
+        "tab": 2,
+    },
+    {
+        "menu": "석쇠두루치기",
+        "price": 17000,
+        "img": ".jpg",
+        "tab": 2,
+    },
+    {
+        "menu": "매운양념 뒷고기 한판",
+        "price": 19000,
+        "img": ".jpg",
+        "tab": 2,
+    },
+    {
+        "menu": "똥꼬 닭똥집",
+        "price": 14000,
+        "img": ".jpg",
+        "tab": 2,
+    },
+    {
+        "menu": "소고기 찹스테이크",
+        "price": 20000,
+        "img": ".jpg",
+        "tab": 2,
+    },
+    {
+        "menu": "폭설 치즈불닭",
+        "price": 19000,
+        "img": ".jpg",
+        "tab": 2,
+    },
+    {
+        "menu": "돼지껍데기 마라볶음",
+        "price": 9900,
+        "img": ".jpg",
+        "tab": 2,
+    },
+    {
+        "menu": "핫윙",
+        "price": 14000,
+        "img": ".jpg",
+        "tab": 3,
+    },
+    {
+        "menu": "사천탕수육",
+        "price": 17000,
+        "img": ".jpg",
+        "tab": 3,
+    },
+    {
+        "menu": "닭똥집 튀김",
+        "price": 12000,
+        "img": ".jpg",
+        "tab": 3,
+    },
+    {
+        "menu": "만만까야 새우튀김",
+        "price": 16000,
+        "img": ".jpg",
+        "tab": 3,
+    },
+    {
+        "menu": "모듬튀김",
+        "price": 6000,
+        "img": ".jpg",
+        "tab": 3,
+    },
+    {
+        "menu": "골뱅이무침",
+        "price": 16000,
+        "img": ".jpg",
+        "tab": 4,
+    },
+    {
+        "menu": "닭다리살 냉채",
+        "price": 17000,
+        "img": ".jpg",
+        "tab": 4,
+    },
+    {
+        "menu": "쫄야삼",
+        "price": 10000,
+        "img": ".jpg",
+        "tab": 4,
+    },
+    {
+        "menu": "쌈닭",
+        "price": 16000,
+        "img": ".jpg",
+        "tab": 4,
+    },
+    {
+        "menu": "계절화채",
+        "price": 14000,
+        "img": ".jpg",
+        "tab": 4,
+    },
+    {
+        "menu": "신선과일",
+        "price": 17000,
+        "img": ".jpg",
+        "tab": 4,
+    },
+    {
+        "menu": "스팸두부김치",
+        "price": 14000,
+        "img": ".jpg",
+        "tab": 5,
+    },
+    {
+        "menu": "모둠소세지",
+        "price": 16000,
+        "img": ".jpg",
+        "tab": 5,
+    },
+    {
+        "menu": "갈비만두",
+        "price": 5000,
+        "img": ".jpg",
+        "tab": 5,
+    },
+    {
+        "menu": "김치우동",
+        "price": 8000,
+        "img": ".jpg",
+        "tab": 5,
+    },
+    {
+        "menu": "계란찜",
+        "price": 5000,
+        "img": ".jpg",
+        "tab": 5,
+    },
+    {
+        "menu": "연꽃튀김",
+        "price": 4000,
+        "img": ".jpg",
+        "tab": 5,
+    },
+    {
+        "menu": "불고기칩스",
+        "price": 8000,
+        "img": ".jpg",
+        "tab": 5,
+    },
+    {
+        "menu": "바삭이 쥐포",
+        "price": 3000,
+        "img": ".jpg",
+        "tab": 5,
+    },
+    {
+        "menu": "항아리수제비",
+        "price": 7000,
+        "img": ".jpg",
+        "tab": 5,
+    },
+    {
+        "menu": "소떡소떡 2p",
+        "price": 7000,
+        "img": ".jpg",
+        "tab": 5,
+    },
+    {
+        "menu": "노가리 5ea",
+        "price": 6000,
+        "img": ".jpg",
+        "tab": 6,
+    },
+    {
+        "menu": "버터오징어",
+        "price": 8000,
+        "img": ".jpg",
+        "tab": 6,
+    },
+    {
+        "menu": "쥐포 3ea",
+        "price": 7000,
+        "img": ".jpg",
+        "tab": 6,
+    },
+    {
+        "menu": "먹태",
+        "price": 14000,
+        "img": ".jpg",
+        "tab": 6,
+    },
+    {
+        "menu": "오뎅 5p",
+        "price": 5000,
+        "img": ".jpg",
+        "tab": 7,
+    },
+    {
+        "menu": "떡꼬치 2p",
+        "price": 2000,
+        "img": ".jpg",
+        "tab": 7,
+    },
+    {
+        "menu": "중국당면",
+        "price": 2000,
+        "img": ".jpg",
+        "tab": 7,
+    },
+    {
+        "menu": "치즈",
+        "price": 2000,
+        "tab": 7,
+    },
+    {
+        "menu": "라면",
+        "price": 1000,
+        "tab": 7,
+    },
+    {
+        "menu": "우동",
+        "price": 1000,
+        "tab": 7,
+    },
+    {
+        "menu": "떡사리",
+        "price": 1000,
+        "tab": 7,
+    },
+    {
+        "menu": "김치전골 고기",
+        "price": 5000,
+        "tab": 7,
+    },
+    {
+        "menu": "곱창전골 곱창",
+        "price": 8000,
+        "tab": 7,
+    },
+    {
+        "menu": "처음처럼",
+        "price": 4500,
+        "img": "https://imgur.com/4imAg3a.jpg",
+        "tab": 8,
+    },
+    {
+        "menu": "참이슬 후레쉬",
+        "price": 4500,
+        "img": "https://imgur.com/GE9S3m3.jpg",
+        "tab": 8,
+    },
+    {
+        "menu": "진로이즈백",
+        "price": 4500,
+        "img": "https://imgur.com/7NqroZ1.jpg",
+        "tab": 8,
+    },
+    {
+        "menu": "生클라우드 병",
+        "price": 4500,
+        "img": "https://imgur.com/7S24BTD.jpg",
+        "tab": 8,
+    },
+    {
+        "menu": "피츠 병",
+        "price": 4500,
+        "img": "https://imgur.com/I7Ish9j.jpg",
+        "tab": 8,
+    },
+    {
+        "menu": "테라 병",
+        "price": 4500,
+        "img": "https://imgur.com/butUagl.jpg",
+        "tab": 8,
+    },
+    {
+        "menu": "하이트 병",
+        "price": 4500,
+        "img": "https://imgur.com/rXZMLUy.jpg",
+        "tab": 8,
+    },
+    {
+        "menu": "크림생맥주 500cc",
+        "price": 4500,
+        "img": "https://imgur.com/ZWHMkCk.jpg",
+        "tab": 8,
+    },
+    {
+        "menu": "크림생맥주 1700cc",
+        "price": 13000,
+        "img": "https://imgur.com/rQ9DP8i.jpg",
+        "tab": 8,
+    },
+    {
+        "menu": "심술 택1",
+        "price": 6000,
+        "img": "https://imgur.com/lA3a4ys.jpg",
+        "tab": 8,
+    },
+    {
+        "menu": "펩시",
+        "price": 2000,
+        "img": "https://imgur.com/FQdk7Io.jpg",
+        "tab": 8,
+    },
+    {
+        "menu": "사이다",
+        "price": 2000,
+        "img": "https://imgur.com/NoXCVE1.jpg",
+        "tab": 8,
+    },
+]
+
+db.manman.delete_many({})
+db.manman.insert_many(data)
+
+exit(1)
